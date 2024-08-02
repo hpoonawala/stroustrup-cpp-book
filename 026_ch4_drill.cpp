@@ -13,6 +13,7 @@ int main(){
 	constexpr double INtoS = 0.0254;
 	constexpr double CMtoS = 0.01;
 	constexpr double MtoS = 1.0;
+	vector<double> lengths;
 	while(sw != '|'){
 		cout << "Enter a positive integer-valued length in cm, m, in, or ft:\n";
 		cin >> num1 >> unit;
@@ -31,6 +32,9 @@ int main(){
 			factor = 0.0;
 			cout << "Illegal units\n" ;
 		}
+		if (!(factor == 0.0)) {
+			lengths.push_back(num1*factor);	
+		}
 		sum_value +=factor*num1; // Add to the sum, using the factor to convert units
 		if (num1*factor < smol) smol=num1*factor; // update smallest 
 		if (num1*factor > swole) swole=num1*factor; // update largest
@@ -45,5 +49,7 @@ int main(){
 		cout << '\n';
 		fflush(stdin);
 	}
+	sort(lengths);
+	for (int i=0;i<lengths.size();i++) cout << lengths[i] << '\n';
 	return 0;
 }
