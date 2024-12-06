@@ -25,20 +25,19 @@ int main()
 		else if (c == 'n')
 		{  
 			if (lower == mid-1 && (lower != 1) ) {// when lower and middle are close, but number is not smaller than middle, answer must be middle
-				found = true;
+				found = true; // rule doesn't work when lower has never changed
 			}
 			else// since number is smaller, move the upper bound down to mid
-				upper = mid;
-			if (lower == 1){
-			}
+				upper = mid; 
 		}
 		else{
 
 			cout << "you entered " << c << "instead of y or n. Let's try again.";
 		}
+		// handle the found flag, and the case where upper=lower
 		if (found){
 			cout << "The number is " << mid << endl;
-		} else if (upper == lower){
+		} else if (upper == lower){ // catches the case when number is 1 (all answers are no), then lower=upper=mid=1, and none of the found conditions above would catch this
 			cout << "The number is " << upper << endl;
 			found = true;
 		}
