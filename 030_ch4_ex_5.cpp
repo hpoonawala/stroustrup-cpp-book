@@ -2,7 +2,7 @@
 
 #include "std_lib_facilities.h"
 int main(){
-	cout << "Please enter the binary operation you want to perform as <operation> <first float> <second float>:\n";
+	cout << "Please enter the binary operation you want to perform in words as <operation> <first float> <second float>. For example:\n + 4.0 5.0\nor\nplus 4.0 5.0:\n";
 	string operation;
 	double val1;
 	double val2;
