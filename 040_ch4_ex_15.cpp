@@ -6,8 +6,7 @@ int main(){
 
 	vector<int> primes={2};
 	bool isprime = true;
-	int i=3;
-	while(i<=nmax){
+	for(int i=3;primes.size()<nmax;i++){ // loop over integers from 3 till 100
 		isprime=true; 
 		for (int j=0;j<primes.size();j++){
 			if( (i % primes[j] == 0)){ // check divisibility using mod
@@ -18,7 +17,6 @@ int main(){
 		if(isprime){ // if isprime never made false, it is a prime, add to primes vector
 			primes.push_back(i);
 		}
-		i++;
 	}
 	// print primes identified
 	for(int p: primes)

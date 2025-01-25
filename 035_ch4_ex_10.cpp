@@ -8,6 +8,7 @@ int main(){
 	int program=-1;
 
 	while(true){
+		cout << "Let's play rock, paper, scissors. Enter your choice:\n";
 		cin >> input;
 
 		// Convert string to integer in {0,1,2}
